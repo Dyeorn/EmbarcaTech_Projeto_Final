@@ -28,7 +28,7 @@ uint16_t capture_audio() {
 
 int main() {
     stdio_init_all();
-    sleep_ms(2000); // Aguarda inicialização
+    sleep_ms(2000);
 
     setup_mic();
     printf("Microfone pronto, aguardando som...\n");
@@ -43,9 +43,9 @@ int main() {
     // Inicializa o display OLED corretamente
     ssd1306_init(&ssd, 128, 64, false, OLED_ADDRESS, I2C_PORT);
     ssd1306_config(&ssd);
-    ssd1306_fill(&ssd, 0); // Limpa a tela
-    ssd1306_draw_string(&ssd, "Aguardando texto...", 0, 0); // Corrigido
-    ssd1306_send_data(&ssd); // Corrigido
+    ssd1306_fill(&ssd, 0);
+    ssd1306_draw_string(&ssd, "Aguardando texto...", 0, 0);
+    ssd1306_send_data(&ssd);
 
     char buffer[BUFFER_SIZE];
     int index = 0;
@@ -70,8 +70,8 @@ int main() {
 
                 // Atualiza o OLED corretamente
                 ssd1306_fill(&ssd, 0);
-                ssd1306_draw_string(&ssd, buffer, 0, 0); // Corrigido
-                ssd1306_send_data(&ssd); // Corrigido
+                ssd1306_draw_string(&ssd, buffer, 0, 0);
+                ssd1306_send_data(&ssd);
 
                 index = 0;
             } else {
